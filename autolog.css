@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4507845 */
+  src: url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.woff2?t=1713154951707")
+      format("woff2"),
+    url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.woff?t=1713154951707")
+      format("woff"),
+    url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.ttf?t=1713154951707")
+      format("truetype");
+}
+#autolog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#autolog span {
+  pointer-events: auto;
+  width: max-content;
+  animation: fadein 0.4s;
+  animation-delay: 0s;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.1);
+  margin: 4px;
+  transition: 0.2s;
+  font-size: 14px;
+  height: max-content;
+  background-color: #fafafa;
+  color: #333;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#autolog span::before {
+  padding-right: 4px;
+}
+#autolog span.autolog-warn,
+#autolog span.autolog-warning {
+  background-color: #fffaec;
+  color: #e29505;
+}
+#autolog span.autolog-warn::before,
+#autolog span.autolog-warning::before {
+  content: "\e682";
+}
+#autolog span.autolog-error {
+  background-color: #fde7e7;
+  color: #d93025;
+}
+#autolog span.autolog-error::before {
+  content: "\e66f";
+}
+#autolog span.autolog-info {
+  background-color: #e6f7ff;
+  color: #0e6eb8;
+}
+#autolog span.autolog-info::before {
+  content: "\e668";
+}
+#autolog span.autolog-success {
+  background-color: #e9f7e7;
+  color: #1a9e2c;
+}
+#autolog span.autolog-success::before {
+  content: "\e67f";
+}
+#autolog span.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

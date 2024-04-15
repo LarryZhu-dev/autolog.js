@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../autolog.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script type="module">
+    import aotolog from "../index.js";
+    aotolog.log("Hello World");
+    setTimeout(() => {
+      aotolog.log("Hello World");
+    }, 1500);
+    setTimeout(() => {
+      aotolog.log("Hello World");
+    }, 2500);
+    setTimeout(() => {
+      aotolog.log("Hello World", "warn");
+    }, 3500);
+    setTimeout(() => {
+      aotolog.log("Hello World", "error");
+    }, 4500);
+    setTimeout(() => {
+      aotolog.log("Hello World", "info");
+    }, 5500);
+    setTimeout(() => {
+      aotolog.log("Hello World", "success");
+    }, 6500);
+  </script>
+</html>
