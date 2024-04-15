@@ -1,8 +1,12 @@
 {
   "name": "autolog.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "轻量化的小弹窗",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LarryZhu-dev/autolog.js.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
