@@ -68,11 +68,15 @@
 #autolog span.autolog-info::before {
   content: "\e668";
 }
-#autolog span.autolog-success {
+#autolog span.autolog-success,
+#autolog span.autolog-ok,
+#autolog span.autolog-done {
   background-color: #e9f7e7;
   color: #1a9e2c;
 }
-#autolog span.autolog-success::before {
+#autolog span.autolog-success::before,
+#autolog span.autolog-ok::before,
+#autolog span.autolog-done::before {
   content: "\e67f";
 }
 #autolog span.hide {
