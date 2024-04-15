@@ -1,0 +1,15 @@
+{
+  "name": "autolog.js",
+  "version": "1.0.0",
+  "description": "轻量化的小弹窗",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "toast",
+    "autolog.js"
+  ],
+  "author": "Larry Zhu",
+  "license": "MIT"
+}
