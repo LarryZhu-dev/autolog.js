@@ -10,5 +10,8 @@ npm i autofit.js
 
 ```js
 import aotolog from "autolog.js";
+import 'autolog.js/autolog.css'
+
 autolog.log("Hello World", "success", 2500);
+// 其中 "success" 和 2500 都是可选项
 ```

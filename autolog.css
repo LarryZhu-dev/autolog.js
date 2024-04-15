@@ -18,7 +18,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999999;
+  z-index: 9999999;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -32,6 +32,7 @@
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.1);
   margin: 4px;
   transition: 0.2s;
+  z-index: 9999999;
   font-size: 14px;
   height: max-content;
   background-color: #fafafa;
