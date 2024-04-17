@@ -1,6 +1,6 @@
 <p align="center">
   <a target="_blank" href="#">
-  <img alt="autofit" src="https://raw.githubusercontent.com/Larryzhu-dev/autolog.js/main//autolog.svg" width="300">
+  <img alt="autolog" src="https://raw.githubusercontent.com/Larryzhu-dev/autolog.js/main//autolog.svg" width="300">
   </a>
 </p>
 
@@ -13,7 +13,7 @@
 安装
 
 ```shell
-npm i autofit.js
+npm i autolog.js
 ```
 
 使用
