@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../autolog.css" />
     <style>
       * {
         padding: 0;
@@ -15,6 +14,9 @@
   <body></body>
   <script type="module">
     import aotolog from "../index.js";
+    setTimeout(() => {
+      aotolog.log("Hello World", "success", 100000);
+    }, 2500);
     setTimeout(() => {
       aotolog.log("Hello World", "success");
     }, 6500);

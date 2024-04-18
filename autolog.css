@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "iconfont"; /* Project id 4507845 */
-  src: url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.woff2?t=1713154951707")
-      format("woff2"),
-    url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.woff?t=1713154951707")
-      format("woff"),
-    url("//at.alicdn.com/t/c/font_4507845_4ys40xqhy9u.ttf?t=1713154951707")
-      format("truetype");
-}
 #autolog {
   display: flex;
   flex-direction: column;
@@ -34,51 +25,11 @@
   transition: 0.2s;
   z-index: 9999999;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   height: max-content;
-  background-color: #fafafa;
-  color: #333;
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-#autolog span::before {
-  padding-right: 4px;
-}
-#autolog span.autolog-warn,
-#autolog span.autolog-warning {
-  background-color: #fffaec;
-  color: #e29505;
-}
-#autolog span.autolog-warn::before,
-#autolog span.autolog-warning::before {
-  content: "\e682";
-}
-#autolog span.autolog-error {
-  background-color: #fde7e7;
-  color: #d93025;
-}
-#autolog span.autolog-error::before {
-  content: "\e66f";
-}
-#autolog span.autolog-info {
-  background-color: #e6f7ff;
-  color: #0e6eb8;
-}
-#autolog span.autolog-info::before {
-  content: "\e668";
-}
-#autolog span.autolog-success,
-#autolog span.autolog-ok,
-#autolog span.autolog-done {
-  background-color: #e9f7e7;
-  color: #1a9e2c;
-}
-#autolog span.autolog-success::before,
-#autolog span.autolog-ok::before,
-#autolog span.autolog-done::before {
-  content: "\e67f";
 }
 #autolog span.hide {
   opacity: 0;
@@ -87,6 +38,26 @@
   height: 0;
   padding: 0;
   margin: 0;
+}
+.autolog-warn {
+  background-color: #fffaec;
+  color: #e29505;
+}
+.autolog-error {
+  background-color: #fde7e7;
+  color: #d93025;
+}
+.autolog-info {
+  background-color: #e6f7ff;
+  color: #0e6eb8;
+}
+.autolog-success {
+  background-color: #e9f7e7;
+  color: #1a9e2c;
+}
+.autolog- {
+  background-color: #fafafa;
+  color: #333;
 }
 @keyframes fadein {
   0% {

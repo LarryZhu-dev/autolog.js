@@ -20,7 +20,6 @@ npm i autolog.js
 
 ```js
 import aotolog from "autolog.js";
-import 'autolog.js/autolog.css' // 引入一次即可
 
 autolog.log("Hello World", "success", 2500);
 // 其中 "success" 和 2500 都是可选项

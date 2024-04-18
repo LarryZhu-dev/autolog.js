@@ -1,4 +1,4 @@
-type logType = "log" | "warn" | "warning" | "error" | "info" | "success" | "ok" | "done";
+type logType = "log" | "warn" | "error" | "info" | "success";
 type logTime = number;
 declare interface autolog {
   /**
