@@ -17,7 +17,7 @@ const autolog = {
     let el = document.createElement("span");
     el.className = `autolog-${type}`;
     el.innerHTML =
-      svgIcons[type] + `<span>${text.replace("\n", "</br>")}</span>`;
+      svgIcons[type] + `<span>${text.replace(/\n/g, "</br>")}</span>`;
     mainEl.appendChild(el);
     setTimeout(() => {
       el.classList.add("hide");
