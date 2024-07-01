@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+    .btn{
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+        color: #409eff;
+        background: #ecf5ff;
+        border: 1px solid #b3d8ff;
+    }
+    .btn:hover{
+        background: #409eff;
+        border-color: #409eff;
+        color: #fff;
+    }
+    .demo{
+        display: flex;
+        justify-content: center;
+        margin: 200px;
+    }
+    .demo .btn{
+        margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="demo">
+  <button class="btn log" data-type="warn">warn</button>
+  <button class="btn log" data-type="error">error</button>
+  <button class="btn log" data-type="info">info</button>
+  <button class="btn log" data-type="success">success</button>
+</div>
+</body>
+</html>
