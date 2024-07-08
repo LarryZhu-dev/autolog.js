@@ -5,8 +5,7 @@ import autolog from '../src/index';
 // });
 $('.log').on('click', function () {
   if ($(this).hasClass('handleClose')) {
-    autolog.log('Hello World','success', false);
-    return;
+    autolog.log('Hello World', 'success', false);
   } else {
     const type = $(this).data('type');
     autolog.log('Hello World', type, 100500);
