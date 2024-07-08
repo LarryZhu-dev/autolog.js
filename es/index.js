@@ -19,8 +19,13 @@ var autolog = {
         var mainEl = getMainElement();
         var el = document.createElement("span");
         el.className = "autolog-".concat(type);
-        el.innerHTML =
-            svgIcons[type] + "<span>".concat(text.replace(/\n/g, "</br>"), "</span>");
+        if (type.startsWith("icon-")) {
+            el.innerHTML = "<span class=\"iconfont ".concat(type, "\"></span> <span>").concat(text.replace(/\n/g, "</br>"), "</span>");
+        }
+        else {
+            el.innerHTML =
+                svgIcons[type] + "<span>".concat(text.replace(/\n/g, "</br>"), "</span>");
+        }
         mainEl.appendChild(el);
         setTimeout(function () {
             el.classList.add("hide");
@@ -30,6 +35,9 @@ var autolog = {
             el = null;
         }, time);
     },
+    customIcons: function (icons) {
+        Object.assign(svgIcons, icons);
+    }
 };
 function getMainElement() {
     var mainEl = document.querySelector("#autolog");
