@@ -7,8 +7,15 @@ const svgIcons = {
   "": "",
 };
 type iconfont = `icon-${string}`;
+type AutologLogType<T extends Record<string, string>> = keyof typeof svgIcons | keyof T | iconfont;
+
+// 定义 AutologOptions 泛型接口，描述 autolog.create 方法的 options 参数类型
+interface AutologOptions<T extends Record<string, string>> {
+  svgIcons: T;
+  duration?: number;
+}
 const autolog = {
-  log(text = "", type: keyof typeof svgIcons | iconfont = "", time = 2500) {
+  log<T extends typeof svgIcons>(text = "", type: AutologLogType<T> = "", time = 2500) {
     if (typeof type === "number") {
       time = type;
       type = "";
@@ -16,9 +23,9 @@ const autolog = {
     time += 900; // 400ms for fadein, 500ms for fadeout
     const mainEl = getMainElement();
     let el: HTMLSpanElement | null = document.createElement("span");
-    el.className = `autolog-${type}`;
-    if (type.startsWith("icon-")) {
-      el.innerHTML = `<span class="iconfont ${type}"></span> <span>${text.replace(/\n/g, "</br>")}</span>`;
+    el.className = `autolog-${type.toString()}`;
+    if (type.toString().startsWith("icon-")) {
+      el.innerHTML = `<span class="iconfont ${type.toString()}"></span> <span>${text.replace(/\n/g, "</br>")}</span>`;
     } else {
       el.innerHTML =
         svgIcons[type as keyof typeof svgIcons] + `<span>${text.replace(/\n/g, "</br>")}</span>`;
@@ -32,11 +39,16 @@ const autolog = {
       el = null;
     }, time);
   },
-  customIcons(icons: Record<string, string>) {
-    Object.assign(svgIcons, icons);
+  create<T extends Record<string, string>>(options: AutologOptions<T>) {
+    customIcons(options.svgIcons);
+    return {
+      log: this.log.bind(this) as <U extends AutologLogType<T>>(text?: string, type?: U, time?: number) => void,
+    };
   }
 };
-
+function customIcons(icons: Record<string, string>) {
+  Object.assign(svgIcons, icons);
+}
 function getMainElement() {
   let mainEl = document.querySelector("#autolog");
   if (!mainEl) {

@@ -1,5 +1,5 @@
 /*!
- * autolog.js v2.0.3
+ * autolog.js v2.1.0
  * (c) 2023-present Larry Zhu
  * Released under the MIT License.
  */
@@ -36,9 +36,9 @@ var autolog = {
         time += 900; // 400ms for fadein, 500ms for fadeout
         var mainEl = getMainElement();
         var el = document.createElement("span");
-        el.className = "autolog-".concat(type);
-        if (type.startsWith("icon-")) {
-            el.innerHTML = "<span class=\"iconfont ".concat(type, "\"></span> <span>").concat(text.replace(/\n/g, "</br>"), "</span>");
+        el.className = "autolog-".concat(type.toString());
+        if (type.toString().startsWith("icon-")) {
+            el.innerHTML = "<span class=\"iconfont ".concat(type.toString(), "\"></span> <span>").concat(text.replace(/\n/g, "</br>"), "</span>");
         }
         else {
             el.innerHTML =
@@ -53,10 +53,16 @@ var autolog = {
             el = null;
         }, time);
     },
-    customIcons: function (icons) {
-        Object.assign(svgIcons, icons);
+    create: function (options) {
+        customIcons(options.svgIcons);
+        return {
+            log: this.log.bind(this),
+        };
     }
 };
+function customIcons(icons) {
+    Object.assign(svgIcons, icons);
+}
 function getMainElement() {
     var mainEl = document.querySelector("#autolog");
     if (!mainEl) {
