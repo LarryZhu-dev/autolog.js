@@ -54,11 +54,12 @@ const autolog = {
         mainEl.removeChild(el!);
         el = null;
       }, time);
+    } else {
+      el?.addEventListener('click', () => {
+        mainEl.removeChild(el!);
+        el = null;
+      });
     }
-    el?.addEventListener('click', () => {
-      mainEl.removeChild(el!);
-      el = null;
-    });
   },
   create<T extends Record<string, string>>(options: AutologOptions<T>) {
     customIcons(options.svgIcons);
