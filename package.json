@@ -20,6 +20,7 @@
   ],
   "homepage": "https://larryzhu-dev.github.io/autoLarryPages/autolog.js/",
   "scripts": {
+    "cleanCSS":"node ./src/minify.js",
     "clean": "shx rm -rf ./es",
     "lint": "eslint src/**/*.ts",
     "dev": "webpack serve -c ./build/webpack.dev.conf.js",
@@ -44,7 +45,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "babel-jest": "^29.4.3",
     "babel-loader": "^9.1.2",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.0",
     "eslint-webpack-plugin": "^4.2.0",
     "html-webpack-plugin": "^5.6.0",
     "jest": "^29.4.3",
@@ -60,7 +61,8 @@
     "webpack": "^5.81.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^5.10.0",
+    "clean-css": "^5.3.3"
   },
   "author": "Larry Zhu",
   "license": "MIT"
