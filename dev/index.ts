@@ -8,5 +8,5 @@ const autolog = alog.create({
 $('.log').on('click', function () {
   const type = $(this).data('type');
   const handleClose = $(this).hasClass('handleClose');
-  autolog.log(type, !handleClose ? type : "icon-success", 100000, !handleClose);
+  autolog.log(type, !handleClose ? type : "icon-success", 1000, !handleClose);
 });

@@ -24,3 +24,18 @@ import aotolog from "autolog.js";
 autolog.log("Hello World", "success", 2500);
 // 其中 "success" 和 2500 都是可选项
 ```
+
+自定义 icon
+
+支持 svg 字符串，iconfont 类名
+
+```js
+import alog from "autolog.js";
+const autolog = alog.create({
+ svgIcons: {
+     customSvg: `<svg>...</svg>`,
+     iconfont: "icon-xxx"
+ }
+});
+```
+
