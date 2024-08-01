@@ -36,10 +36,10 @@ const autolog = {
     let el: HTMLSpanElement | null = document.createElement("span");
     el.className = `autolog-${type.toString()}`;
     if (type.toString().startsWith("icon-")) {
-      el.innerHTML = `<span class="iconfont ${type.toString()}"></span> <span>${text.replace(/\n/g, "</br>")}</span>`;
+      el.innerHTML = `<span class="iconfont ${type.toString()}"></span> <span>${escapeHtml(text)}</span>`;
     } else {
       el.innerHTML =
-        svgIcons[type as keyof typeof svgIcons] + `<span>${text.replace(/\n/g, "</br>")}</span>`;
+        svgIcons[type as keyof typeof svgIcons] + `<span>${escapeHtml(text)}</span>`;
     }
     if (!autoClose) {
       el.innerHTML += getX(type as keyof MtoastElementColor);
@@ -105,5 +105,15 @@ function getMainElement() {
     document.head.insertBefore(style, document.head.firstChild);
   }
   return mainEl;
+}
+
+function escapeHtml(unsafe: string) {
+  return unsafe
+      .replace(/&/g, "&amp;") // & -> &amp;
+      .replace(/</g, "&lt;")  // < -> &lt;
+      .replace(/>/g, "&gt;")  // > -> &gt;
+      .replace(/"/g, "&quot;") // " -> &quot;
+      .replace(/'/g, "&#039;") // ' -> &#039;
+      .replace(/\n/g, "</br>");
 }
 export default autolog;
