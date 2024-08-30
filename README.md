@@ -19,7 +19,7 @@ npm i autolog.js
 使用
 
 ```js
-import aotolog from "autolog.js";
+import autolog from "autolog.js";
 
 autolog.log("Hello World", "success", 2500);
 // 其中 "success" 和 2500 都是可选项
